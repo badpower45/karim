@@ -4,6 +4,13 @@
   import path from 'path';
 
   export default defineConfig({
+    // Use a dynamic base so production assets resolve correctly on GitHub Pages
+    // where the site is served from /<repo>/ (e.g., /karim/), while keeping
+    // local dev paths unchanged.
+    base:
+      process.env.GITHUB_ACTIONS === 'true'
+        ? `/${(process.env.GITHUB_REPOSITORY || '').split('/')[1] || ''}/`
+        : '/',
     plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
