@@ -1,0 +1,24 @@
+# Node/Vite defaults
+node_modules/
+build/
+dist/
+.vite/
+.turbo/
+.npm-cache/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Env files
+.env
+.env.local
+.env.*.local
+
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
